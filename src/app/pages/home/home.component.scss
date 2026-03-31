@@ -1,0 +1,92 @@
+.home-container {
+  min-height: 100dvh;
+  width: 100%;
+
+  background: url("/assets/images/tela_inicial.jpeg") no-repeat center center;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+
+  animation: backgroundMove 30s infinite alternate ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0; 
+
+  background: rgba(10, 0, 30, 0.5);
+  backdrop-filter: blur(2px);
+
+  z-index: 1;
+}
+
+.menu-container {
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+  color: #FFD700;
+  text-shadow: 2px 2px 8px #000;
+
+  border: 3px solid #FFD700;
+  border-radius: 15px;
+
+  padding: clamp(20px, 5vw, 40px);
+  width: min(90%, 500px);
+
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 25px #FF8C00;
+}
+
+.game-title {
+  font-size: clamp(1rem, 3.5vw, 2rem);
+  margin-bottom: clamp(20px, 5vw, 50px);
+
+  animation: glow 2s infinite alternate, floatTitle 6s infinite ease-in-out;
+}
+
+.start-btn {
+  font-size: clamp(0.9rem, 3vw, 1.5rem);
+  padding: clamp(12px, 3vw, 20px) clamp(25px, 6vw, 60px);
+
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #FF8C00, #FF4500);
+  color: #fff;
+
+  transition: 0.3s;
+}
+
+.start-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #FFD700;
+  background: linear-gradient(135deg, #FFD700, #FF8C00);
+}
+
+/* animações */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #FF8C00;
+  }
+  to {
+    text-shadow: 0 0 20px #FFD700;
+  }
+}
+
+@keyframes floatTitle {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes backgroundMove {
+  0% { background-position: center; }
+  100% { background-position: top; }
+}

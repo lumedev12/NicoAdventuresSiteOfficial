@@ -1,0 +1,38 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 40px;
+
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+
+  border-bottom: 2px solid #FFD700;
+
+  z-index: 1000;
+}
+
+.logo {
+  color: #FFD700;
+  font-size: 14px;
+  text-shadow: 0 0 10px #FF8C00;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #FFD700;
+  text-shadow: 0 0 10px #FFD700;
+}
