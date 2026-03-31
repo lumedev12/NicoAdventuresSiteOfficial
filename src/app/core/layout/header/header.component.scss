@@ -2,37 +2,98 @@
   position: fixed;
   top: 0;
   width: 100%;
-
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
-  padding: 20px 40px;
-
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
-
-  border-bottom: 2px solid #FFD700;
-
+  justify-content: flex-start;
+  gap: 80px; 
+  align-items: center;
+  padding: 20px 60px;
+  background: #0a0a0a; 
+  border-bottom: 3px solid #660273; 
   z-index: 1000;
 }
 
 .logo {
+  font-family: 'Press Start 2P', cursive;
   color: #FFD700;
-  font-size: 14px;
-  text-shadow: 0 0 10px #FF8C00;
+
+  font-size: 20px;
+  letter-spacing: 2px;
+
+  text-shadow:
+    0 0 5px #FF8C00,
+    0 0 10px #FFD700,
+    0 0 20px #FF4500;
+
+  transition: 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+nav {
+  display: flex;
+  gap: 30px;
 }
 
 nav a {
-  margin-left: 20px;
+  font-family: 'Press Start 2P', cursive;
   text-decoration: none;
-  color: #fff;
-
-  font-size: 12px;
-  transition: 0.3s;
+  color: #ffffff;
+  font-size: 10px;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
 nav a:hover {
   color: #FFD700;
-  text-shadow: 0 0 10px #FFD700;
+  transform: scale(1.1);
+  text-shadow:
+    0 0 5px #FFD700,
+    0 0 10px #FF8C00,
+    0 0 20px #FFD700;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #660273, #A305A6, #FFD700);
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a.active {
+  color: #FFD700;
+
+  text-shadow:
+    0 0 5px #FFD700,
+    0 0 15px #FFD700;
+
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+  }
+
+  .logo {
+    font-size: 14px;
+  }
+
+  nav {
+    gap: 15px;
+  }
+
+  nav a {
+    font-size: 8px;
+  }
 }
