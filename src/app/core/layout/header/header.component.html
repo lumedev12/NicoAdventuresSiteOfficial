@@ -1,9 +1,23 @@
 <header class="header">
-  <div class="logo">Nico Adventures</div>
+  <div class="container">
+    
+    <!-- LOGO -->
+    <div class="logo">
+      <h1>NICO ADVENTURES</h1>
+    </div>
 
-  <nav>
-    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-    <a routerLink="/sobre" routerLinkActive="active">Sobre</a>
-    <a routerLink="/download" routerLinkActive="active">Download</a>
-  </nav>
+    <!-- MENU -->
+    <nav class="nav">
+      <a routerLink="/">Home</a>
+      <a routerLink="/sobre">Sobre</a>
+      <a routerLink="/download">Download</a>
+      <a routerLink="/contato">Contato</a>
+    </nav>
+
+    <!-- BOTÃO -->
+    <div class="actions">
+      <button>Entrar</button>
+    </div>
+
+  </div>
 </header>
