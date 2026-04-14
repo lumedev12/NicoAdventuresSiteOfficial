@@ -1,38 +1,107 @@
-.header {
-  position: fixed;
-  top: 0;
+.footer {
   width: 100%;
+  display: block;
+
+  background: #0a0a0a;
+  border-top: 3px solid #660273;
+
+  padding-top: 40px;
+  margin: 0; /* REMOVE QUALQUER ESPAÇO BRANCO */
+}
+
+/* CONTAINER */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding: 20px 40px;
-
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
-
-  border-bottom: 2px solid #FFD700;
-
-  z-index: 1000;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
-.logo {
-  color: #FFD700;
-  font-size: 14px;
-  text-shadow: 0 0 10px #FF8C00;
+/* LOGO */
+.footer-logo {
+  h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    color: #FFD700;
+
+    text-shadow:
+      0 0 5px #FF8C00,
+      0 0 10px #FFD700,
+      0 0 20px #FF4500;
+  }
+
+  p {
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 10px;
+  }
 }
 
-nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #fff;
+/* LINKS */
+.footer-links {
+  display: flex;
+  gap: 30px;
 
-  font-size: 12px;
-  transition: 0.3s;
+  a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    position: relative;
+    transition: 0.3s;
+
+    &:hover {
+      color: #FFD700;
+
+      text-shadow:
+        0 0 5px #FFD700,
+        0 0 10px #FF8C00;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(90deg, #FFD700, #FF8C00);
+      transition: 0.3s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
 }
 
-nav a:hover {
-  color: #FFD700;
-  text-shadow: 0 0 10px #FFD700;
+/* PARTE DE BAIXO */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  p {
+    font-size: 12px;
+    color: #aaa;
+  }
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
 }
