@@ -20,5 +20,13 @@ export const routes = [
       //import('./pages/download/download.component')
         import('./pages/download/download.component')
         .then(m => m.DownloadComponent)
+  },
+
+  {
+    path: 'contato',
+    loadComponent: () =>
+      //import('./pages/contato/contato.component')
+        import('./pages/contato/contato.component')
+        .then(m => m.ContatoComponent)
   }
 ];
