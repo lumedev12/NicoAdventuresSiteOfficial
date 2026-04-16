@@ -1,0 +1,152 @@
+/* =========================
+   FUNDO
+========================= */
+.contact {
+  min-height: 100vh;
+  padding: 100px 20px 60px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: linear-gradient(180deg, #00010D, #020204, #0d0510);
+
+  h1 {
+    font-size: 42px;
+    color: #FFD700;
+    margin-bottom: 40px;
+
+    text-shadow:
+      0 0 5px #FF8C00,
+      0 0 10px #FFD700,
+      0 0 20px #FF4500;
+  }
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.contact-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  background: rgba(255, 255, 255, 0.03);
+  padding: 30px;
+  border-radius: 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  box-shadow:
+    0 0 10px rgba(255, 140, 0, 0.2),
+    0 0 30px rgba(255, 69, 0, 0.1);
+}
+
+/* INPUTS */
+.input-group {
+  input,
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+
+    color: #fff;
+    font-size: 14px;
+
+    outline: none;
+    transition: 0.3s;
+
+    &::placeholder {
+      color: #aaa;
+    }
+
+    &:focus {
+      border-color: #FFD700;
+
+      box-shadow:
+        0 0 5px #FFD700,
+        0 0 10px #FF8C00;
+    }
+  }
+}
+
+/* BOTÃO */
+.send-btn {
+  margin-top: 10px;
+  padding: 14px;
+
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+
+  color: #000;
+
+  background: linear-gradient(45deg, #FFD700, #FF8C00, #FF4500);
+
+  box-shadow:
+    0 0 10px #FFD700,
+    0 0 20px #FF8C00,
+    0 0 30px #FF4500;
+
+  transition: all 0.3s ease;
+
+  position: relative;
+  overflow: hidden;
+
+  /* brilho passando */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    );
+
+    transform: skewX(-25deg);
+  }
+
+  &:hover::before {
+    animation: brilho 0.8s forwards;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+      0 0 15px #FFD700,
+      0 0 30px #FF8C00,
+      0 0 40px #FF4500;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+/* ANIMAÇÃO */
+@keyframes brilho {
+  100% {
+    left: 125%;
+  }
+}
