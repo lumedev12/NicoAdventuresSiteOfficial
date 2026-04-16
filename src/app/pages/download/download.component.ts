@@ -9,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class DownloadComponent {
 
+  irParaJogo() {
+    window.open('https://nico-adventures-beta.vercel.app', '_blank');
+  }
+
 }

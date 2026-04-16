@@ -1,92 +1,192 @@
-.home-container {
-  min-height: 100dvh;
-  width: 100%;
+/* =========================
+   FUNDO GLOBAL (caso não esteja no styles.scss)
+========================= */
+:host {
+  display: block;
+  background: linear-gradient(180deg, #00010D, #020204, #0d0510);
+  color: #fff;
+  min-height: 100vh;
+}
 
-  background: url("/assets/images/tela_inicial.jpeg") no-repeat center center;
-  background-size: cover;
+/* =========================
+   DOWNLOAD SECTION
+========================= */
+.download-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  padding: 60px 20px;
+  gap: 30px;
+
+  h2 {
+    font-size: 40px;
+    color: #FFD700;
+
+    text-shadow:
+      0 0 5px #FF8C00,
+      0 0 10px #FFD700,
+      0 0 20px #FF4500;
+  }
+}
+
+/* =========================
+   IMAGEM MAIOR
+========================= */
+.image-box {
+  position: relative; /* IMPORTANTE */
+  width: 100%;
+  max-width: 700px; /* aumenta tamanho */
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+
+    object-fit: cover;
+
+    box-shadow:
+      0 0 15px rgba(255, 140, 0, 0.4),
+      0 0 30px rgba(255, 69, 0, 0.3);
+
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}
+
+/* =========================
+   BOTÃO SOBREPOSTO
+========================= */
+.play-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   display: flex;
-  justify-content: center;
   align-items: center;
-
-  position: relative;
-  overflow: hidden;
-
-  animation: backgroundMove 30s infinite alternate ease-in-out;
+  justify-content: center;
 }
 
-.overlay {
+/* CÍRCULO EXTERNO */
+.play-wrapper::before {
+  content: '';
   position: absolute;
-  inset: 0; 
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
 
-  background: rgba(10, 0, 30, 0.5);
-  backdrop-filter: blur(2px);
+  border: 3px solid #FFD700;
 
-  z-index: 1;
+  box-shadow:
+    0 0 10px #FFD700,
+    0 0 20px #FF8C00;
+
+  animation: pulse 1.8s infinite;
 }
 
-.menu-container {
+/* BOTÃO PLAY */
+.play-btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+
+  border: none;
+  cursor: pointer;
+
+  font-size: 24px;
+  color: #000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(45deg, #FFD700, #FF8C00, #FF4500);
+
+  box-shadow:
+    0 0 10px #FFD700,
+    0 0 20px #FF8C00,
+    0 0 30px #FF4500;
+
+  transition: all 0.3s ease;
+
   position: relative;
   z-index: 2;
 
-  text-align: center;
+  &:hover {
+    transform: scale(1.15);
+
+    box-shadow:
+      0 0 20px #FFD700,
+      0 0 40px #FF8C00,
+      0 0 50px #FF4500;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+/* ANIMAÇÃO DO CÍRCULO */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.2);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.play-wrapper {
+  position: absolute;
+  top: 60%; /* ↓ desce o botão */
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* TEXTO PLAY */
+.play-text {
+  margin-top: 10px;
+  font-size: 12px;
+  letter-spacing: 2px;
   color: #FFD700;
-  text-shadow: 2px 2px 8px #000;
+
+  text-shadow:
+    0 0 5px #FF8C00,
+    0 0 10px #FFD700;
+
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* círculo animado continua igual */
+.play-wrapper::before {
+  content: '';
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
 
   border: 3px solid #FFD700;
-  border-radius: 15px;
 
-  padding: clamp(20px, 5vw, 40px);
-  width: min(90%, 500px);
+  box-shadow:
+    0 0 10px #FFD700,
+    0 0 20px #FF8C00;
 
-  background: rgba(0, 0, 0, 0.4);
-  box-shadow: 0 0 25px #FF8C00;
-}
-
-.game-title {
-  font-size: clamp(1rem, 3.5vw, 2rem);
-  margin-bottom: clamp(20px, 5vw, 50px);
-
-  animation: glow 2s infinite alternate, floatTitle 6s infinite ease-in-out;
-}
-
-.start-btn {
-  font-size: clamp(0.9rem, 3vw, 1.5rem);
-  padding: clamp(12px, 3vw, 20px) clamp(25px, 6vw, 60px);
-
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-
-  background: linear-gradient(135deg, #FF8C00, #FF4500);
-  color: #fff;
-
-  transition: 0.3s;
-}
-
-.start-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px #FFD700;
-  background: linear-gradient(135deg, #FFD700, #FF8C00);
-}
-
-/* animações */
-@keyframes glow {
-  from {
-    text-shadow: 0 0 10px #FF8C00;
-  }
-  to {
-    text-shadow: 0 0 20px #FFD700;
-  }
-}
-
-@keyframes floatTitle {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes backgroundMove {
-  0% { background-position: center; }
-  100% { background-position: top; }
+  animation: pulse 1.8s infinite;
 }
