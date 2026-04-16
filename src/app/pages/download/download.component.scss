@@ -1,3 +1,13 @@
+/* =========================
+   FUNDO GLOBAL (caso não esteja no styles.scss)
+========================= */
+:host {
+  display: block;
+  background: linear-gradient(180deg, #00010D, #020204, #0d0510);
+  color: #fff;
+  min-height: 100vh;
+}
+
 .download-container {
   min-height: 100vh;
   position: relative;
