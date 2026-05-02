@@ -7,6 +7,14 @@
   padding-top: 100px;
 }
 
+/* CONTAINER GLOBAL */
+.home-grid,
+.section-two,
+.team-carousel {
+  max-width: 100%;
+  margin: 0;
+}
+
 /* =========================
    GRID PRINCIPAL
 ========================= */
@@ -16,11 +24,9 @@
   grid-template-areas:
     "text-main img-main"
     "img-left text-bottom";
-  gap: 30px;
-  padding: 0 60px;
-  margin-bottom: 80px;
-  position: relative;
-  z-index: 1;
+  gap: 40px;
+  padding: 0 40px;
+  margin-bottom: 100px;
 }
 
 .text-main { grid-area: text-main; }
@@ -28,131 +34,198 @@
 .img-left { grid-area: img-left; }
 .text-bottom { grid-area: text-bottom; }
 
-/* TEXTO */
+/* =========================
+   TEXTO PRINCIPAL
+========================= */
 .text-main h1 {
   font-family: 'Orbitron', sans-serif;
-  font-size: 42px;
+  font-size: 40px;
+  line-height: 1.3;
+
   color: #FFD700;
 
   text-shadow:
-    0 0 5px #FF8C00,
-    0 0 10px #FFD700,
-    0 0 20px #FF4500;
+    0 0 4px rgba(255, 215, 0, 0.6),
+    0 0 10px rgba(255, 140, 0, 0.4);
 }
 
 .text-main p {
-  color: #ccc;
-  line-height: 1.6;
+  color: #bbb;
+  line-height: 1.7;
+  margin-top: 20px;
 }
 
-/* IMAGEM ALTA */
+/* =========================
+   IMAGEM PRINCIPAL
+========================= */
 .img-main img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
+
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
+
   transition: 0.3s;
 }
 
 .img-main img:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
-/* IMAGEM ESQUERDA */
+/* =========================
+   IMAGEM SECUNDÁRIA
+========================= */
 .img-left img {
   width: 100%;
-  height: 220px;
+  height: 260px;
   object-fit: cover;
   border-radius: 16px;
+
+  opacity: 0.9;
+
   transition: 0.3s;
 }
 
 .img-left img:hover {
   transform: scale(1.03);
-}
-
-/* TEXTO EMBAIXO (NEON BRANCO) */
-.text-bottom h1 {
-  color: #ffffff;
-
-  text-shadow:
-    0 0 3px rgba(255, 255, 255, 0.6),
-    0 0 6px rgba(255, 255, 255, 0.4),
-    0 0 12px rgba(255, 255, 255, 0.3);
-}
-
-.text-bottom p {
-  color: #ccc;
+  opacity: 1;
 }
 
 /* =========================
-   CARROSSEL
+   TEXTO EXTRA
+========================= */
+.text-bottom h1 {
+  font-size: 24px;
+
+  color: #fff;
+
+  text-shadow:
+    0 0 3px rgba(255,255,255,0.5),
+    0 0 8px rgba(255,255,255,0.3);
+}
+
+.text-bottom p {
+  color: #aaa;
+  margin-bottom: 15px;
+}
+
+/* =========================
+   CARROSSEL (COM NEON)
 ========================= */
 .team-carousel {
   overflow: hidden;
-  padding: 60px 0;
+  padding: 80px 20px;
   text-align: center;
   position: relative;
-  z-index: 0;
+
+  /* 🔥 neon suave */
+  box-shadow:
+    0 0 20px rgba(255, 215, 0, 0.08),
+    0 0 40px rgba(255, 140, 0, 0.05);
 }
 
+/* glow animado leve */
+.team-carousel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(circle, rgba(255,215,0,0.08), transparent 70%);
+  animation: glowPulse 4s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+/* TRACK */
 .carousel-track {
   display: flex;
-  gap: 40px;
-  animation: scroll 20s linear infinite;
+  gap: 30px;
+  animation: scroll 35s linear infinite;
 }
 
-/* PERSONAGENS (REDONDO) */
+/* =========================
+   PERSONAGENS (REDONDO)
+========================= */
 .personagens .member img {
-  width: 130px;
-  height: 130px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
 
-  border: 3px solid #FFD700;
+  border: 2px solid #FFD700;
 
   box-shadow:
-    0 0 10px #FFD700,
-    0 0 20px #FF8C00,
-    0 0 30px #FF4500;
+    0 0 6px rgba(255, 215, 0, 0.4);
 
   transition: 0.3s;
 }
 
 .personagens .member img:hover {
-  transform: scale(1.1);
-}
-
-/* INTEGRANTES (QUADRADO) */
-.integrantes .member img {
-  width: 180px;
-  height: 120px;
-  border-radius: 16px;
-  object-fit: cover;
-
-  border: 3px solid #FFD700;
+  transform: scale(1.08);
 
   box-shadow:
-    0 0 10px #FFD700,
-    0 0 20px #FF8C00,
-    0 0 30px #FF4500;
+    0 0 12px rgba(255, 215, 0, 0.7),
+    0 0 20px rgba(255, 140, 0, 0.4);
+}
+
+/* =========================
+   INTEGRANTES
+========================= */
+/* =========================
+   INTEGRANTES (FIGURINHA)
+========================= */
+.integrantes .member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 15px;
+  border-radius: 18px;
+
+  /* leve destaque */
+  backdrop-filter: blur(6px);
+
+  transition: 0.3s;
+}
+
+.integrantes .member:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 0 15px rgba(255, 215, 0, 0.2),
+    0 0 25px rgba(255, 140, 0, 0.1);
+}
+
+/* IMAGEM MAIS ALTA (FORMATO RETRATO) */
+.integrantes .member img {
+  width: 160px;
+  height: 200px; /* 🔥 agora é figurinha */
+  object-fit: cover;
+
+  border-radius: 14px;
+
+  border: 2px solid #FFD700;
+
+  box-shadow:
+    0 0 6px rgba(255, 215, 0, 0.4);
 
   transition: 0.3s;
 }
 
 .integrantes .member img:hover {
   transform: scale(1.05);
+
+  box-shadow:
+    0 0 12px rgba(255, 215, 0, 0.7),
+    0 0 20px rgba(255, 140, 0, 0.4);
 }
 
-.member p {
+/* NOME */
+.integrantes .member p {
   margin-top: 10px;
-  color: #ccc;
-}
-
-/* ANIMAÇÃO */
-@keyframes scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  font-size: 14px;
+  color: #ddd;
 }
 
 /* =========================
@@ -161,26 +234,46 @@
 .section-two {
   display: flex;
   gap: 40px;
-  padding: 0 60px 80px;
+  padding: 0 40px 100px;
 }
 
 .text-left h2 {
+  font-size: 32px;
+
   color: #FFD700;
 
   text-shadow:
-    0 0 5px #FF8C00,
-    0 0 10px #FFD700,
-    0 0 20px #FF4500;
+    0 0 4px rgba(255, 215, 0, 0.6);
+}
+
+.text-left p {
+  color: #bbb;
 }
 
 .image-right img {
   width: 70%;
   border-radius: 20px;
+
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+
   transition: 0.3s;
 }
 
 .image-right img:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
 }
 
 /* =========================
@@ -200,5 +293,9 @@
   .section-two {
     flex-direction: column;
     padding: 0 20px 60px;
+  }
+
+  .image-right img {
+    width: 100%;
   }
 }
