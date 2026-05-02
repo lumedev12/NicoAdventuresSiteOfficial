@@ -9,5 +9,8 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  godownload() {
+    window.open('/download', '_blank');
+  }
 
 }

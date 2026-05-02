@@ -28,10 +28,12 @@
 
 /* LOGO */
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
   font-family: 'Press Start 2P', cursive;
   color: #FFD700;
-  font-size: 20px;
-  letter-spacing: 2px;
 
   text-shadow:
     0 0 5px #FF8C00,
@@ -39,6 +41,18 @@
     0 0 20px #FF4500;
 
   transition: 0.3s;
+
+  img {
+    width: 40px;  /* tamanho da logo */
+    height: 40px;
+    object-fit: contain;
+  }
+
+  h1 {
+    font-size: 16px; /* DIMINUIU */
+    margin: 0;
+    letter-spacing: 2px;
+  }
 
   &:hover {
     transform: scale(1.05);
