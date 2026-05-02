@@ -25,17 +25,18 @@ export class AppComponent {
   showFooter = true;
 
   constructor(private router: Router) {
+
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: any) => {
 
-        const noHeaderRoutes = ['/download'];
-        const noFooterRouter = ['/download'];
+        const url = event.urlAfterRedirects;
 
-        this.showHeader = !noHeaderRoutes.some(route => event.urlAfterRedirects.startsWith(route));
-        this.showFooter = !noFooterRouter.some(route => event.urlAfterRedirects.startsWith(route));
+        const hiddenHeaderRoutes = ['/download', '/contato'];
+        const hiddenFooterRoutes = ['/download', '/contato'];
 
-        this.showHeader = !event.urlAfterRedirects.startsWith('/download');
+        this.showHeader = !hiddenHeaderRoutes.some(route => url.startsWith(route));
+        this.showFooter = !hiddenFooterRoutes.some(route => url.startsWith(route));
       });
   }
 }

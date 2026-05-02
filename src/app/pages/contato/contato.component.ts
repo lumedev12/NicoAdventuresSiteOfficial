@@ -9,8 +9,8 @@ import { Component } from '@angular/core';
 })
 export class ContatoComponent {
 
-  irParaJogo() {
-    window.open('https://nico-adventures-beta.vercel.app', '_blank');
+  irParaHome() {
+    window.location.href = '/';
   }
 
 }
