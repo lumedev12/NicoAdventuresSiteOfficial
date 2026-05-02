@@ -2,10 +2,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <!-- =========================
-     SEÇÃO PRINCIPAL
+     GRID PRINCIPAL
 ========================= -->
-<section class="home-content">
-  <div class="text">
+<section class="home-grid">
+
+  <!-- TEXTO PRINCIPAL -->
+  <div class="text-main">
     <h1>
       “Quando todos desapareceram, apenas um teve coragem de voltar. 
       Enfrente o desconhecido, escape da casa e prove que até o menor dos heróis pode desafiar o maior dos medos.”
@@ -19,10 +21,18 @@
     </p>
   </div>
 
-  <div class="images">
+  <!-- IMAGEM ALTA -->
+  <div class="img-main">
     <img src="assets/images/gato2.png" />
-    <img src="assets/images/ganggatos.jpg" />
+  </div>
 
+  <!-- IMAGEM ESQUERDA -->
+  <div class="img-left">
+    <img src="assets/images/ganggatos.jpg" />
+  </div>
+
+  <!-- TEXTO EMBAIXO -->
+  <div class="text-bottom">
     <h1>Qual é a proposta?</h1>
     <p>
       Oferecer uma experiência imersiva onde o jogador assume o papel de um pequeno herói em uma grande missão.
@@ -33,83 +43,36 @@
       Aventura com elementos de exploração e puzzle, focado em estratégia e tomada de decisões.
     </p>
   </div>
-</section>
 
+</section>
 
 <!-- =========================
-     CARROSSEL DE PERSONAGENS
+     CARROSSEL REDONDO
 ========================= -->
 <section class="team-carousel personagens">
-<br/>
   <div class="carousel-track">
-    <div class="member">
-      <img src="assets/images/tela_inicial.jpeg" />
-    </div>
 
-    <div class="member">
-      <img src="assets/images/Nico_personagem_principal.png" />
-    </div>
+    <div class="member"><img src="assets/images/tela_inicial.jpeg" /></div>
+    <div class="member"><img src="assets/images/Nico_personagem_principal.png" /></div>
+    <div class="member"><img src="assets/images/gato2.png" /></div>
+    <div class="member"><img src="assets/images/arma_direita.png" /></div>
+    <div class="member"><img src="assets/images/municap.png" /></div>
+    <div class="member"><img src="assets/images/obstaculo.png" /></div>
+    <div class="member"><img src="assets/images/ratobeta.png" /></div>
+    <div class="member"><img src="assets/images/Nico_baixo.png" /></div>
 
-    <div class="member">
-      <img src="assets/images/gato2.png" />
-    </div>
+    <!-- DUPLICADO -->
+    <div class="member"><img src="assets/images/tela_inicial.jpeg" /></div>
+    <div class="member"><img src="assets/images/Nico_personagem_principal.png" /></div>
+    <div class="member"><img src="assets/images/gato2.png" /></div>
+    <div class="member"><img src="assets/images/arma_direita.png" /></div>
+    <div class="member"><img src="assets/images/municap.png" /></div>
+    <div class="member"><img src="assets/images/obstaculo.png" /></div>
+    <div class="member"><img src="assets/images/ratobeta.png" /></div>
+    <div class="member"><img src="assets/images/Nico_baixo.png" /></div>
 
-    <div class="member">
-      <img src="assets/images/arma_direita.png" />
-    </div>
-
-    <div class="member">
-      <img src="assets/images/municap.png" />
-    </div>
-
-    <div class="member">
-      <img src="assets/images/obstaculo.png" />
-    </div>
-
-    <div class="member">
-      <img src="assets/images/ratobeta.png" />
-    </div>
-
-    <div class="member">
-      <img src="assets/images/Nico_baixo.png" />
-    </div>
-
-    <!-- DUPLICADO PARA LOOP -->
-    <div class="member">
-      <img src="assets/images/tela_inicial.jpeg" />
-    </div>
-
-    <div class="member">
-      <img src="assets/images/Nico_personagem_principal.png" />
-    </div>
-
-    <div class="member">
-      <img src="assets/images/gato2.png" />
-    </div>
-
-    <div class="member">
-      <img src="assets/images/arma_direita.png" />
-    </div>
-
-    <div class="member">
-      <img src="assets/images/municap.png" />
-    </div>
-
-    <div class="member">
-      <img src="assets/images/obstaculo.png" />
-    </div>
-
-    <div class="member">
-      <img src="assets/images/ratobeta.png" />
-    </div>
-
-    <div class="member">
-      <img src="assets/images/Nico_baixo.png" />
-    </div>
   </div>
 </section>
-
-
 
 <!-- =========================
      SEÇÃO 2
@@ -129,12 +92,13 @@
 </section>
 
 <!-- =========================
-     CARROSSEL DE INTEGRANTES
+     CARROSSEL QUADRADO
 ========================= -->
 <section class="team-carousel integrantes">
   <h2>Integrantes</h2>
 
   <div class="carousel-track">
+
     <div class="member">
       <img src="assets/images/user1.jpg" />
       <p>Nome 1</p>
@@ -150,7 +114,7 @@
       <p>Nome 3</p>
     </div>
 
-    <!-- DUPLICADO PARA LOOP -->
+    <!-- DUPLICADO -->
     <div class="member">
       <img src="assets/images/user1.jpg" />
       <p>Nome 1</p>
@@ -165,5 +129,6 @@
       <img src="assets/images/user3.jpg" />
       <p>Nome 3</p>
     </div>
+
   </div>
 </section>
