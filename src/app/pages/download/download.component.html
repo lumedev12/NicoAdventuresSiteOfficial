@@ -1,18 +1,21 @@
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <section class="download-content">
+
+  <!-- BOTÃO VOLTAR -->
+  <div class="back-wrapper">
+  <button class="back-btn" (click)="irParaHome()">← VOLTAR</button>
+</div>
 
   <h2>DOWNLOAD NOW!</h2>
 
   <div class="image-box">
     <img src="assets/images/telainicial.jpg" />
+  </div>
 
-    <!-- BOTÃO SOBRE A IMAGEM -->
-    <div class="play-wrapper">
-      <button class="play-btn" (click)="irParaJogo()">
-        ▶
-      </button>
-
-      <span class="play-text">PLAY</span>
-    </div>
+  <div class="play-wrapper">
+    <button class="play-btn" (click)="irParaJogo()">▶</button>
+    <span class="play-text">PLAY</span>
   </div>
 
 </section>
