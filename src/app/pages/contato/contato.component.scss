@@ -1,5 +1,13 @@
+:host {
+  display: block;
+  background: linear-gradient(180deg, #00010D, #020204, #0d0510);
+  color: #fff;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
 /* =========================
-   FUNDO
+   CONTAINER PRINCIPAL
 ========================= */
 .contact {
   min-height: 100vh;
@@ -9,79 +17,173 @@
   flex-direction: column;
   align-items: center;
 
-  background: linear-gradient(180deg, #00010D, #020204, #0d0510);
+  position: relative;
+}
 
-  h1 {
-    font-size: 42px;
-    color: #FFD700;
-    margin-bottom: 40px;
+/* =========================
+   TÍTULO
+========================= */
+.contact h1 {
+  font-family: 'Press Start 2P', cursive;
 
-    text-shadow:
-      0 0 5px #FF8C00,
+  font-size: 32px;
+  color: #FFD700;
+
+  margin-bottom: 40px;
+
+  text-shadow:
+    0 0 5px #FF8C00,
+    0 0 10px #FFD700,
+    0 0 20px #FF4500;
+}
+
+/* =========================
+   BOTÃO VOLTAR (DIREITA)
+========================= */
+.back-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.back-btn {
+  position: relative;
+  overflow: hidden;
+
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+
+  padding: 12px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+
+  color: #000;
+
+  background: linear-gradient(45deg, #FFD700, #FF8C00, #FF4500);
+
+  box-shadow:
+    0 0 5px #FFD700,
+    0 0 10px #FF8C00,
+    0 0 20px #FF4500;
+
+  transition: all 0.3s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    );
+
+    transform: skewX(-25deg);
+  }
+
+  &:hover::before {
+    animation: brilho 0.8s forwards;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+
+    box-shadow:
       0 0 10px #FFD700,
-      0 0 20px #FF4500;
+      0 0 20px #FF8C00,
+      0 0 30px #FF4500;
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 }
 
 /* =========================
-   CONTAINER
+   CONTAINER FORM
 ========================= */
 .contact-container {
   width: 100%;
-  max-width: 500px;
+  max-width: 520px;
+
+  display: flex;
+  justify-content: center;
 }
 
 /* =========================
-   FORMULÁRIO
+   FORMULÁRIO CENTRALIZADO (CORRIGIDO)
 ========================= */
 .contact-form {
+  width: 100%;
+  max-width: 520px;
+
+  min-height: 450px;
+
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  justify-content: center;
+  align-items: center; /* 🔥 resolve desalinhamento */
+
+  gap: 18px;
+
+  padding: 30px 40px; /* 🔥 equilíbrio lateral */
 
   background: rgba(255, 255, 255, 0.03);
-  padding: 30px;
   border-radius: 16px;
 
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.15);
 
   box-shadow:
     0 0 10px rgba(255, 140, 0, 0.2),
     0 0 30px rgba(255, 69, 0, 0.1);
 }
 
-/* INPUTS */
-.input-group {
-  input,
-  textarea {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
+/* =========================
+   INPUTS
+========================= */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: transparent;
+  padding: 12px 14px;
 
-    color: #fff;
-    font-size: 14px;
+  border-radius: 10px;
 
-    outline: none;
-    transition: 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.3);
 
-    &::placeholder {
-      color: #aaa;
-    }
+  color: #fff;
+  font-size: 14px;
 
-    &:focus {
-      border-color: #FFD700;
+  outline: none;
+  transition: 0.3s;
 
-      box-shadow:
-        0 0 5px #FFD700,
-        0 0 10px #FF8C00;
-    }
+  font-family: 'Poppins', sans-serif;
+
+  &::placeholder {
+    color: #aaa;
+  }
+
+  &:focus {
+    border-color: #FFD700;
+
+    box-shadow:
+      0 0 6px #FFD700,
+      0 0 12px #FF8C00;
   }
 }
 
-/* BOTÃO */
+/* =========================
+   BOTÃO ENVIAR (CENTRALIZADO)
+========================= */
 .send-btn {
   margin-top: 10px;
   padding: 14px;
@@ -107,7 +209,8 @@
   position: relative;
   overflow: hidden;
 
-  /* brilho passando */
+  align-self: center; /* 🔥 deixa igual centralizado perfeito */
+
   &::before {
     content: '';
     position: absolute;
@@ -144,7 +247,9 @@
   }
 }
 
-/* ANIMAÇÃO */
+/* =========================
+   ANIMAÇÃO
+========================= */
 @keyframes brilho {
   100% {
     left: 125%;

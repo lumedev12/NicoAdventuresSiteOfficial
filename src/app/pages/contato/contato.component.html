@@ -1,23 +1,33 @@
 <section class="contact">
 
+  <!-- BOTÃO VOLTAR (ESQUERDA) -->
+  <div class="back-wrapper">
+    <button class="back-btn" (click)="irParaHome()">← VOLTAR</button>
+  </div>
+
   <h1>CONTATO</h1>
 
   <div class="contact-container">
 
-    <!-- FORMULÁRIO -->
-    <form class="contact-form">
+    <form class="contact-form" (ngSubmit)="enviar()">
 
-      <div class="input-group">
-        <input type="text" placeholder="Seu nome" required />
-      </div>
+      <input type="text"
+        [(ngModel)]="name"
+        name="name"
+        placeholder="Seu nome"
+        required />
 
-      <div class="input-group">
-        <input type="email" placeholder="Seu email" required />
-      </div>
+      <input type="email"
+        [(ngModel)]="email"
+        name="email"
+        placeholder="Seu email"
+        required />
 
-      <div class="input-group">
-        <textarea rows="5" placeholder="Sua mensagem" required></textarea>
-      </div>
+      <textarea rows="5"
+        [(ngModel)]="message"
+        name="message"
+        placeholder="Sua mensagem"
+        required></textarea>
 
       <button type="submit" class="send-btn">
         ENVIAR
