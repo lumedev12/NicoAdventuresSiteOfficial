@@ -7,11 +7,9 @@ import { environment } from '../../environments/environment';
 })
 export class ContactService {
 
-  private api = environment.apiUrl;
-
   constructor(private http: HttpClient) {}
 
   sendMessage(data: any) {
-    return this.http.post(`${environment.apiUrl}/send-message`, data)
+    return this.http.post(`${environment.apiUrl}/send-message`, data);
   }
 }
