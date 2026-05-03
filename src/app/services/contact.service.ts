@@ -12,6 +12,6 @@ export class ContactService {
   constructor(private http: HttpClient) {}
 
   sendMessage(data: any) {
-    return this.http.post(`${this.api}/send-message`, data);
+    return this.http.post(`${environment.apiUrl}/send-message`, data)
   }
 }
