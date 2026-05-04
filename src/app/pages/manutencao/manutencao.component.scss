@@ -1,0 +1,64 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #00010D, #020204, #0d0510);
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+.manutencao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.box {
+  text-align: center;
+  padding: 40px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  box-shadow:
+    0 0 10px rgba(255, 140, 0, 0.2),
+    0 0 30px rgba(255, 69, 0, 0.1);
+
+  h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: #FFD700;
+    margin-bottom: 20px;
+
+    text-shadow:
+      0 0 5px #FF8C00,
+      0 0 10px #FFD700;
+  }
+
+  p {
+    margin-bottom: 30px;
+    color: #ccc;
+  }
+
+  button {
+    font-family: 'Press Start 2P', cursive;
+    padding: 12px 20px;
+
+    background: linear-gradient(45deg, #FFD700, #FF8C00, #FF4500);
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+    color: #000;
+
+    box-shadow:
+      0 0 10px #FFD700,
+      0 0 20px #FF8C00;
+
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

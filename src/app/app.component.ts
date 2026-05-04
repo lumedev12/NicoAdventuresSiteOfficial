@@ -32,8 +32,8 @@ export class AppComponent {
 
         const url = event.urlAfterRedirects;
 
-        const hiddenHeaderRoutes = ['/download', '/contato'];
-        const hiddenFooterRoutes = ['/download', '/contato'];
+        const hiddenHeaderRoutes = ['/download', '/contato', '/manutencao'];
+        const hiddenFooterRoutes = ['/download', '/contato', '/manutencao'];
 
         this.showHeader = !hiddenHeaderRoutes.some(route => url.startsWith(route));
         this.showFooter = !hiddenFooterRoutes.some(route => url.startsWith(route));
