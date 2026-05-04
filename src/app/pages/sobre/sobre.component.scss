@@ -1,24 +1,123 @@
-/* =========================
-   FUNDO GLOBAL (caso não esteja no styles.scss)
-========================= */
 :host {
   display: block;
+  min-height: 100vh;
   background: linear-gradient(180deg, #00010D, #020204, #0d0510);
   color: #fff;
-  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
 }
 
-.sobre-container {
-  min-height: 100vh;
-  position: relative;
-}
-.overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+/* =========================
+   SECTION
+========================= */
+.sobre {
+  padding: 100px 20px 60px;
+  text-align: center;
+
+  h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 42px;
+    color: #FFD700;
+
+    text-shadow:
+      0 0 5px #FF8C00,
+      0 0 10px #FFD700,
+      0 0 20px #FF4500;
+
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+  }
 }
 
-.menu-container {
+/* =========================
+   GRID
+========================= */
+.sobre-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =========================
+   CARD (BLOCOS BRANCOS)
+========================= */
+.card {
+  background: #ffffff; /* branco */
+  color: #000;
+
+  padding: 25px;
+  border-radius: 16px;
+
+  text-align: left;
+
+  transition: 0.3s ease;
+
+  box-shadow:
+    0 0 10px rgba(255, 140, 0, 0.2),
+    0 0 20px rgba(255, 69, 0, 0.1);
+
   position: relative;
-  z-index: 2;
+  overflow: hidden;
+
+  /* linha neon em cima */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(90deg, #FFD700, #FF8C00, #FF4500);
+  }
+
+  &:hover {
+    transform: translateY(-8px) scale(1.02);
+
+    box-shadow:
+      0 0 15px #FFD700,
+      0 0 30px #FF8C00;
+  }
+
+  h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+  }
+}
+
+/* =========================
+   ICON
+========================= */
+.icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 768px) {
+  .sobre {
+    padding: 80px 15px;
+  }
+
+  .card {
+    text-align: center;
+  }
 }
