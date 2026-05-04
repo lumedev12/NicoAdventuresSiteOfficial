@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { ManutencaoComponent } from './pages/manutencao/manutencao.component';
 
 export const routes = [
   {
@@ -28,5 +29,10 @@ export const routes = [
       //import('./pages/contato/contato.component')
         import('./pages/contato/contato.component')
         .then(m => m.ContatoComponent)
+  },
+  {
+  path: 'manutencao',
+  loadComponent: () => import('./pages/manutencao/manutencao.component')
+    .then(m => m.ManutencaoComponent)
   }
 ];
